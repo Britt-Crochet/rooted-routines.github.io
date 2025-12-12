@@ -2,28 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Progress</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="tasks.html">Tasks</a>
-    <a href="calendar.html">Calendar</a>
-    <a href="progress.html">Progress</a>
-  </nav>
+  
+  <div class="viewport-fix">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="progress.html">Progress</a>
+    </nav>
 
-  <div class="progress-page-container">
-    <h1>Progress</h1>
+    <div class="progress-page-container">
+      <h1>Progress Details</h1>
 
-    <div id="progress-container">
-      <div id="progress-bar"></div>
+      <div class="progress-container" id="progress-page-progress-container">
+        <div class="progress-bar" id="progress-page-progress-bar"></div>
+      </div>
+
+      <img id="tree-image-progress" src="images/seedling.png" class="tree-img">
     </div>
-
-    <img id="tree-image" src="images/seedling.png" class="tree-img">
   </div>
 
   <script src="tasks.js"></script>
+  <script>
+    window.onload = () => {
+        updateProgress();
+    };
+  </script>
 </body>
 </html>
-
