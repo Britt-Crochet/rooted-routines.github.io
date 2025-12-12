@@ -2,28 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Home</title>
+  <title>Task Tree App</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="tasks.html">Tasks</a>
-    <a href="calendar.html">Calendar</a>
-    <a href="progress.html">Progress</a>
+  <!-- Navigation -->
+  <nav id="nav" style="display:none;">
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('tasks')">Tasks</a>
+    <a href="#" onclick="showSection('calendar')">Calendar</a>
+    <a href="#" onclick="showSection('progress')">Progress</a>
   </nav>
 
-  <div class="home-container">
-    <h1>Your Tree</h1>
+  <!-- Login form -->
+  <div class="login-container" id="login-container">
+    <h1>Welcome</h1>
+    <input type="text" placeholder="Username" id="username">
+    <input type="password" placeholder="Password" id="password">
+    <button onclick="login()">Login</button>
+  </div>
 
+  <!-- Home / Tree Section -->
+  <div class="home-container" id="home" style="display:none;">
+    <h1>Your Tree</h1>
     <div id="progress-container">
       <div id="progress-bar"></div>
     </div>
-
     <img id="tree-image" src="images/seeding.png" alt="Tree growth" class="tree-img">
   </div>
 
+  <!-- Tasks Section -->
+  <div class="tasks-container" id="tasks" style="display:none;">
+    <h1>Your Tasks</h1>
+    <div class="task-input">
+      <input id="taskInput" type="text" placeholder="Add a new task">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+
+  <!-- Calendar Section -->
+  <div class="calendar-container" id="calendar" style="display:none;">
+    <h1>Calendar</h1>
+    <div class="calendar-box">
+      <p>Month view placeholder</p>
+    </div>
+  </div>
+
+  <!-- Progress Section -->
+  <div class="progress-page-container" id="progress" style="display:none;">
+    <h1>Progress</h1>
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+    <img id="tree-image-progress" src="images/seeding.png" class="tree-img">
+  </div>
+
   <script src="tasks.js"></script>
+  <script>
+    function login() {
+      // fake login, just show the app
+      document.getElementById('login-container').style.display = 'none';
+      document.getElementById('nav').style.display = 'flex';
+      showSection('home');
+    }
+
+    function showSection(section) {
+      const sections = ['home','tasks','calendar','progress'];
+      sections.forEach(s => {
+        const el = document.getElementById(s);
+        if(el) el.style.display = (s === section) ? 'block' : 'none';
+      });
+      // update progress bar and tree for the displayed section
+      updateProgress();
+    }
+  </script>
 </body>
 </html>
+
 
