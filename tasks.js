@@ -55,7 +55,7 @@ function updateProgress() {
   if(barHome) barHome.style.width = percent + '%';
   if(barProgress) barProgress.style.width = percent + '%';
 
-  let stage = 'seeding';
+  let stage = 'seedling';
   if(done === 1) stage = 'sprout';
   if(done === 2) stage = 'sapling';
   if(done === 3) stage = 'young-tree';
