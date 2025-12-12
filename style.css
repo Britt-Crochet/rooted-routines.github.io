@@ -1,6 +1,16 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: #f0f0f0; 
+}
+
+.viewport-fix {
+  width: 375px; 
+  min-height: 812px; 
+  margin: 0 auto;
+  border: 1px solid #ccc; 
+  background: white; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
 }
 
 nav {
@@ -8,11 +18,13 @@ nav {
   padding: 12px;
   display: flex;
   gap: 20px;
+  justify-content: space-around; 
 }
 
 nav a {
   text-decoration: none;
   color: #2a3a2a;
+  font-weight: bold; 
 }
 
 .home-container,
@@ -22,10 +34,8 @@ nav a {
   padding: 20px;
 }
 
-/* login */
-
 .login-container {
-  width: 300px;
+  width: 260px; 
   margin: 80px auto;
   display: flex;
   flex-direction: column;
@@ -43,9 +53,8 @@ nav a {
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 5px; 
 }
-
-/* tasks */
 
 .task-input {
   display: flex;
@@ -64,6 +73,7 @@ nav a {
   background: #6aa56a;
   color: white;
   border: none;
+  border-radius: 5px;
 }
 
 #taskList li {
@@ -72,39 +82,51 @@ nav a {
   background: #f2f2f2;
   margin-top: 8px;
   cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s; 
 }
 
-/* progress bar */
+#taskList li:hover {
+    background: #e9e9e9;
+}
 
-#progress-container {
-  width: 100%;
-  height: 22px;
+.progress-container { 
+  width: 90%; 
+  height: 18px; 
   background: #e0e0e0;
   border-radius: 10px;
-  margin: 15px 0;
+  margin: 15px auto; 
   overflow: hidden;
 }
 
-#progress-bar {
+.progress-bar { 
   height: 100%;
   width: 0;
   background: #4caf50;
-  transition: width 0.3s;
+  transition: width 0.3s ease-out; 
 }
 
 .tree-img {
   max-width: 220px;
   display: block;
-  margin-top: 20px;
+  margin: 20px auto 0; 
 }
-
-/* calendar */
 
 .calendar-box {
-  width: 300px;
-  height: 260px;
+  width: 100%; 
   background: #f2f2f2;
-  padding: 20px;
+  padding: 20px 0; 
   margin-top: 20px;
+  text-align: center;
 }
 
+#live-calendar {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2a3a2a;
+    padding: 10px;
+    border: 1px solid #d0e3d0;
+    display: inline-block;
+    border-radius: 5px;
+    background: #fff;
+}
