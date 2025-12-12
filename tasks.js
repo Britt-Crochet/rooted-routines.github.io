@@ -43,8 +43,9 @@ function addTask() {
 }
 
 function updateProgress() {
-  const barHome = document.querySelector('#home #progress-bar');
-  const barProgress = document.querySelector('#progress #progress-bar');
+  const barHome = document.getElementById('home-progress-bar'); 
+  const barProgress = document.getElementById('progress-page-progress-bar');
+  
   const imgHome = document.getElementById('tree-image');
   const imgProgress = document.getElementById('tree-image-progress');
 
@@ -55,7 +56,7 @@ function updateProgress() {
   if(barHome) barHome.style.width = percent + '%';
   if(barProgress) barProgress.style.width = percent + '%';
 
-  let stage = 'seedling';
+  let stage = 'seeding';
   if(done === 1) stage = 'sprout';
   if(done === 2) stage = 'sapling';
   if(done === 3) stage = 'young-tree';
@@ -64,8 +65,3 @@ function updateProgress() {
   if(imgHome) imgHome.src = 'images/' + stage + '.png';
   if(imgProgress) imgProgress.src = 'images/' + stage + '.png';
 }
-
-window.onload = () => {
-  renderTasks();
-  updateProgress();
-};
