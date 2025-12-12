@@ -2,26 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Calendar</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="tasks.html">Tasks</a>
-    <a href="calendar.html">Calendar</a>
-    <a href="progress.html">Progress</a>
-  </nav>
 
-  <div class="calendar-container">
-    <h1>Calendar</h1>
-    <p>This is a simple placeholder calendar for the prototype.</p>
+  <div class="viewport-fix">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="progress.html">Progress</a>
+    </nav>
 
-    <div class="calendar-box">
-      <p>Month view placeholder</p>
+    <div class="calendar-container">
+      <h1>Live Calendar</h1>
+      <p>The current day is:</p>
+
+      <div class="calendar-box">
+        <p id="live-calendar"></p> 
+      </div>
     </div>
   </div>
+
+  <script src="calendar.js"></script>
+  <script>
+    window.onload = updateCalendar;
+  </script>
 </body>
 </html>
-
 
