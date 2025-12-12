@@ -2,29 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Tasks</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="tasks.html">Tasks</a>
-    <a href="calendar.html">Calendar</a>
-    <a href="progress.html">Progress</a>
-  </nav>
 
-  <div class="tasks-container">
-    <h1>Your Tasks</h1>
+  <div class="viewport-fix">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="progress.html">Progress</a>
+    </nav>
 
-    <div class="task-input">
-      <input id="taskInput" type="text" placeholder="Add a new task">
-      <button onclick="addTask()">Add</button>
+    <div class="tasks-container">
+      <h1>Your Tasks</h1>
+
+      <div class="task-input">
+        <input id="taskInput" type="text" placeholder="Add a new task">
+        <button onclick="addTask()">Add</button>
+      </div>
+
+      <ul id="taskList"></ul>
     </div>
-
-    <ul id="taskList"></ul>
   </div>
 
   <script src="tasks.js"></script>
+  <script>
+    window.onload = () => {
+        renderTasks();
+        updateProgress();
+    };
+  </script>
 </body>
 </html>
-
