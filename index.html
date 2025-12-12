@@ -2,33 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="progress.html">Progress</a>
+  </nav>
 
-  <main class="auth-container">
-    <h1>Rooted Routine</h1>
+  <div class="home-container">
+    <h1>Your Tree</h1>
 
-    <div class="placeholder-box">Growth image</div>
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
 
-    <form action="home.html" class="login-form">
-      <label>Username</label>
-      <input type="text" required>
+    <img id="tree-image" src="images/seeding.png" alt="Tree growth" class="tree-img">
+  </div>
 
-      <label>Password</label>
-      <input type="password" required>
-
-      <button type="submit" class="button">Login</button>
-
-      <p class="small-text"><a href="#">Forgot Password?</a></p>
-      <p class="small-text">New user? <a href="#">Sign up</a></p>
-    </form>
-
-    <p class="small-text footer-label">2025 | Rooted Routine</p>
-  </main>
-
+  <script src="tasks.js"></script>
 </body>
 </html>
 
