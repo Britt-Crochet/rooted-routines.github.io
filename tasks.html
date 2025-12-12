@@ -2,53 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tasks</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="tasks.html" class="active">Tasks</a>
-      <a href="calendar.html">Calendar</a>
-      <a href="progress.html">Progress</a>
-      <a href="#">Settings</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="progress.html">Progress</a>
+  </nav>
 
-  <main>
-    <h1>Tasks</h1>
+  <div class="tasks-container">
+    <h1>Your Tasks</h1>
 
-    <div class="placeholder-box">Growth image</div>
+    <div class="task-input">
+      <input id="taskInput" type="text" placeholder="Add a new task">
+      <button onclick="addTask()">Add</button>
+    </div>
 
-    <section>
-      <h2>Priority Tasks</h2>
-      <ul class="task-list">
-        <li>Task 1</li>
-        <li>Task 2</li>
-        <li>Task 3</li>
-      </ul>
-    </section>
+    <ul id="taskList"></ul>
+  </div>
 
-    <section>
-      <h2>Task list Generator</h2>
-      <ul class="task-list">
-        <li>Task 1</li>
-        <li>Task 2</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Routines</h2>
-      <ul class="task-list">
-        <li>Routine 1</li>
-        <li>Routine 2</li>
-      </ul>
-    </section>
-
-    <div class="placeholder-box small">Edit lists</div>
-  </main>
-
+  <script src="tasks.js"></script>
 </body>
 </html>
+
